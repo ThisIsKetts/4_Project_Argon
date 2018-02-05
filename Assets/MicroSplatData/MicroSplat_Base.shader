@@ -4,11 +4,11 @@
 //
 // Auto-generated shader code, don't hand edit!
 //   Compiled with MicroSplat 1.7
-//   Unity : 2017.2.0f3
+//   Unity : 2017.3.0f3
 //   Platform : WindowsEditor
 //////////////////////////////////////////////////////
 
-Shader "Hidden/MicroSplat/Terrain_Base1435193273" {
+Shader "Hidden/MicroSplat/Terrain_Base" {
    Properties {
       [HideInInspector] _Control0 ("Control0", 2D) = "red" {}
       [HideInInspector] _Control1 ("Control1", 2D) = "black" {}
@@ -28,7 +28,6 @@ Shader "Hidden/MicroSplat/Terrain_Base1435193273" {
    }
 
    CGINCLUDE
-      #define UNITY_BRDF_PBS BRDF3_Unity_PBS
    ENDCG
 
    SubShader {
@@ -37,14 +36,12 @@ Shader "Hidden/MicroSplat/Terrain_Base1435193273" {
       ZTest LEqual
       CGPROGRAM
       #pragma exclude_renderers d3d9
-      #pragma surface surf Standard vertex:vert fullforwardshadows addshadow exclude_path:deferred
+      #pragma surface surf Standard vertex:vert fullforwardshadows addshadow
 
       #pragma target 3.5
 
 
 
-      #define _BDRF3 1
-      #define _MICROSPLAT 1
 
 
       #include "UnityCG.cginc"

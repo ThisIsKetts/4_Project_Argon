@@ -4,7 +4,7 @@
 //
 // Auto-generated shader code, don't hand edit!
 //   Compiled with MicroSplat 1.7
-//   Unity : 2017.2.0f3
+//   Unity : 2017.3.0f3
 //   Platform : WindowsEditor
 //////////////////////////////////////////////////////
 
@@ -28,7 +28,6 @@ Shader "MicroSplat/Terrain" {
    }
 
    CGINCLUDE
-      #define UNITY_BRDF_PBS BRDF3_Unity_PBS
    ENDCG
 
    SubShader {
@@ -37,14 +36,12 @@ Shader "MicroSplat/Terrain" {
       ZTest LEqual
       CGPROGRAM
       #pragma exclude_renderers d3d9
-      #pragma surface surf Standard vertex:vert fullforwardshadows addshadow exclude_path:deferred
+      #pragma surface surf Standard vertex:vert fullforwardshadows addshadow
 
       #pragma target 3.5
 
 
 
-      #define _BDRF3 1
-      #define _MICROSPLAT 1
 
 
       #include "UnityCG.cginc"
@@ -1095,7 +1092,7 @@ ENDCG
 
    }
    Dependency "AddPassShader" = "Hidden/MicroSplat/AddPass"
-   Dependency "BaseMapShader" = "Hidden/MicroSplat/Terrain_Base1435193273"
+   Dependency "BaseMapShader" = "Hidden/MicroSplat/Terrain_Base"
    CustomEditor "MicroSplatShaderGUI"
    Fallback "Nature/Terrain/Diffuse"
 }
